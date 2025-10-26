@@ -4,10 +4,11 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  const ipAddress = req.ip;
+  const ipAddress = req.headers?.host;
   res.send(`Your IP Address is: ${ipAddress}`);
 });
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000');
+
 });
